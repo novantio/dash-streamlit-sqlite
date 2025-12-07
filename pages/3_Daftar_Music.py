@@ -37,7 +37,7 @@ if selected_artist != "Semua Artis":
 
 # Filter berdasarkan judul
 if title_search:
-    query += " AND t.title ILIKE ?"
+    query += " AND LOWER(t.title) LIKE LOWER(?)"
     params.append(f"%{title_search}%")
 
 query += " ORDER BY ar.artist_name, t.title limit 100;"
