@@ -32,12 +32,12 @@ params = []
 
 # Filter berdasarkan artis
 if selected_artist != "Semua Artis":
-    query += " AND ar.artist_name= %s"
+    query += " AND ar.artist_name= ?"
     params.append(selected_artist)
 
 # Filter berdasarkan judul
 if title_search:
-    query += " AND t.title ILIKE %s"
+    query += " AND t.title ILIKE ?"
     params.append(f"%{title_search}%")
 
 query += " ORDER BY ar.artist_name, t.title limit 100;"
