@@ -1,5 +1,4 @@
 import networkx as nx
-import psycopg2
 from db import get_connection
 import math
 import streamlit as st
